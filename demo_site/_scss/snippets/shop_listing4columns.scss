@@ -1,0 +1,38 @@
+.productListing4Col{
+	padding: 80px 0px;
+	h1{
+		margin-bottom:40px;
+	}
+	h2{
+		font-size: 1.3em;
+		margin: 20px 0px 10px 0px;
+	}
+	.price{
+		font-size: 1.2em;
+		font-weight: 500;
+		color: $base-main-color;
+		del{
+			font-size: 0.6em;
+			color: $base-text-color;
+			font-weight: 500;
+		}
+	}
+	.item{
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	.item:hover{
+		background: #efefef;
+	}
+	.featured{
+		display: block;
+		position: absolute;
+		top: -10px;
+		right: 25px;
+		@include i-round-corners(999px);
+		background-color: #fe4641!important;
+		padding: 15px;
+		color:#fff;
+		line-height: 220%;
+	}
+}

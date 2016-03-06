@@ -1,0 +1,24 @@
+.sampleContactForm{
+	padding: 80px 0px;
+	
+	.contactInfo{
+		h2, p, ul li{
+			color: #777777;
+		}
+		h2{
+			font-size: 1.5em;
+		}
+		p{
+			padding: 30px 0px;
+		}
+		ul li{
+			padding-left: 25px;
+  			position: relative;
+  			i{
+				position: absolute;
+				top: 3px;
+				left: 0px;
+			}
+		}
+	}
+}

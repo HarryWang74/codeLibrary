@@ -1,0 +1,73 @@
+<div id="carouselHome" class="owl-carousel owl-theme">
+  
+  <div class="item banner1">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12  rightCopy">
+            <h1>Lorem ips</h1>
+            <p>consectetur adipiscing elit sed do <br>eiusmod tempor incididunt</p>
+            <a class="button animationBtn" href="#"><span>call to action</span><i class="fa fa-angle-double-right"></i></a>
+            <a class="button blue animationBtn" href="#"><span>call to action</span><i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+    </div>
+    <div class="texture"></div>
+  </div>
+
+    <div class="item banner2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12  centerCopy">
+            <h1>Lorem ipsum dolor</h1>
+            <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+            <a class="button animationBtn" href="#"><span>call to action</span><i class="fa fa-angle-double-right"></i></a>
+            <a class="button blue animationBtn" href="#"><span>call to action</span><i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+    </div>
+    <div class="texture"></div>
+  </div>
+  
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  if(!navigator.userAgent.match(/(Android|iPod|iPhone|iPad|IEMobile|BlackBerry|Opera Mini)/)){
+    setHomeBanner();
+    $(window).resize(setHomeBanner);
+  }
+
+  $("#carouselHome").owlCarousel({
+    navigation: true, 
+    navigationText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+    slideSpeed: 300,
+    paginationSpeed: 400,
+    singleItem: true,
+    autoHeight : true
+  })
+})
+
+function setHomeBanner() {
+  var windowWidth = $(window).width();
+  var copyTopPadding = $('.navbar-default').height() > windowWidth * 0.12 ? $('.navbar-default').height() + 80 : windowWidth * 0.12;
+  var copyBottomMargin = 70;
+  var bannerMinHeight = windowWidth * 0.45;
+
+  $("#carouselHome .item").each( function() {   
+    $(this).css({
+      'padding-top': copyTopPadding,
+      'padding-bottom': 70,
+      'min-height': bannerMinHeight
+    });
+  });
+}
+</script>
+
+<!--
+  based on http://owlgraphic.com/owlcarousel/
+  include js and css into global
+  after document ready
+    setHomeBanner(); calculate padding when desktop
+    initial owlCarousel
+    in mobile disabled calculate padding and use fixed padding from css. 
+-->

@@ -1,0 +1,129 @@
+#navStandardSearch{
+	.search-form{
+		padding: 33px 25px 30px 25px;
+		.search-button{
+			background: transparent;
+			border: none;
+			i{ color:#fff; }
+		}
+		.form-control{
+			@include i-round-corners(0px);
+			font-family: $base-heading-fontFamily
+		}
+	}
+
+// ----- Overwrite bootstrap default nav ----- //
+	.navbar-default{
+		background-color: rgba(255, 255, 255, 0);
+		border-color: rgba(255,255,255,0.25);
+		.navbar-nav > li > a{
+			color: #fff;
+			font-family: $base-heading-fontFamily;
+			font-size: 0.9em;
+		}
+	}
+	.navbar-brand {
+		height: auto;
+		padding-top: 35px;
+	}
+	.nav > li > a {
+		  padding: 40px 25px 30px 25px;
+	}
+	.navbar-right .dropdown-menu.classic {
+		right: inherit;
+		left: auto;
+	}
+	.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+		background-color: transparent;
+	}
+	.dropdown-menu{
+		padding: 0px;
+		background-color: $base-drop-down-background-color;
+		li > a{
+			color: #818181;
+			padding: 10px 20px;
+			border-bottom: 1px solid #373737;
+		}
+		li > a:hover{
+			color: $base-main-color;
+			background-color: $base-drop-down-background-hover-color;
+		}
+	}
+
+// ----- after scrolling ----- //
+	.small-nav{
+		background-color: #fff;
+		@include i-box-shadow(0, 0, 3px, rgba(0, 0, 0, 0.22));
+		@include i-transition(all, 0.4s, ease);
+		.navbar-nav > li > a, .search-form .search-button i {
+			color: #777;
+		}
+	}
+
+// ----- yamm drop down ----- //
+	.yamm-fw .dropdown-menu .yamm-content .menuColumn{
+		border-right: 1px solid #2c2c2c;
+		h4{
+			margin-bottom: 10px;
+		}
+		ul{	
+			padding-left: 0px;
+			list-style: none;
+			li > a{
+				display: block;
+				padding: 10px 20px;
+				clear: both;
+				border: none;
+			}
+			li > a:hover{
+				background-color: $base-drop-down-background-hover-color;
+			}
+		}
+	}
+	.yamm-fw .dropdown-menu .yamm-content .menuColumn:last-child{
+		border: none;
+	}
+
+	@media (max-width: 767px){
+		.yamm-fw .dropdown-menu .yamm-content .menuColumn{
+			border: none;
+		}
+		.yamm-fw .dropdown-menu .yamm-content .menuColumn ul{
+			margin-bottom: 20px;
+		}
+		.yamm-fw .dropdown-menu .yamm-content .menuColumn ul li>a{
+			border-bottom: 1px solid #373737;
+		}
+		.navbar-right{
+			padding: 0px 20px;
+		}
+		.navbar-default .navbar-nav>li>a{
+			border-bottom: 1px dashed #373737;
+		}
+		.navbar-default .navbar-nav>li>a:last-child{
+			border: none;
+		}
+		.navbar-collapse{
+			background-color: $base-drop-down-background-color;
+		}
+		.navbar-default .navbar-nav > li > a {
+			color: #777;
+		}
+		.nav>li>a{
+			padding: 30px 20px;
+		}
+		.navbar-fixed-top .navbar-collapse{
+			max-height: 100%;
+		}
+
+		.navbar-brand{
+			padding: 15px;
+		}
+		.navbar{
+			margin-bottom: 0px;
+		}
+		.navbar-fixed-top{
+			position: relative;
+		}
+	}
+}

@@ -1,0 +1,118 @@
+<section class="carousel4Columns">
+	
+	<div class="customNavigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2 hidden-xs"><i class="fa fa-th-large fa-4x"></i></div>
+				<div class="col-sm-8"><h2>Donec pede justo, fringilla vel </h2></div>
+				<div class="col-sm-2 centerContent">
+					<a class="btn prev"><i class="fa fa-angle-left fa-3x"></i></a>
+					<a class="btn next"><i class="fa fa-angle-right fa-3x"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="carousel4Columns" class="owl-carousel owl-theme">
+		<div class="item">
+			<a href="#">
+				<div class="overLay"></div>
+				<img class="img-responsive" src="/images/carsouel/600x400/01.jpg">
+				<div class="copyWrapper brownBG">
+					<h3>Lorem ipsum dolorsit </h3>
+					<h4>March 30. 2014</h4>
+				</div>
+			</a>
+		</div>
+		
+		<div class="item">
+			<a href="#">
+				<div class="overLay"></div>
+				<img class="img-responsive" src="/images/carsouel/600x400/02.jpg">
+				<div class="copyWrapper orangeBG">
+					<h3>Lorem ipsum dolorsit </h3>
+					<h4>March 30. 2014</h4>
+				</div>
+			</a>
+		</div>
+		
+		<div class="item">
+			<a href="#">
+				<div class="overLay"></div>
+				<img class="img-responsive" src="/images/carsouel/600x400/03.jpg">
+				<div class="copyWrapper purpleBG">
+					<h3>Lorem ipsum dolorsit </h3>
+					<h4>March 30. 2014</h4>
+				</div>
+			</a>
+		</div>
+		
+		<div class="item">
+			<a href="#">
+				<div class="overLay"></div>
+				<img class="img-responsive" src="/images/carsouel/600x400/04.jpg">
+				<div class="copyWrapper cyanBG">
+					<h3>Lorem ipsum dolorsit </h3>
+					<h4>March 30. 2014</h4>
+				</div>
+			</a>
+		</div>
+		
+		<!-- first slide -->
+
+		<div class="item">
+			<a href="#">
+				<div class="overLay"></div>
+				<img class="img-responsive" src="/images/carsouel/600x400/05.jpg">
+				<div class="copyWrapper brownBG">
+					<h3>Lorem ipsum dolorsit </h3>
+					<h4>March 30. 2014</h4>
+				</div>
+			</a>
+		</div>
+		
+		<div class="item">
+			<a href="#">
+				<div class="overLay"></div>
+				<img class="img-responsive" src="/images/carsouel/600x400/06.jpg">
+				<div class="copyWrapper orangeBG">
+					<h3>Lorem ipsum dolorsit </h3>
+					<h4>March 30. 2014</h4>
+				</div>
+			</a>
+		</div>
+		
+		<div class="item">
+			<a href="#">
+				<div class="overLay"></div>
+				<img class="img-responsive" src="/images/carsouel/600x400/07.jpg">
+				<div class="copyWrapper purpleBG">
+					<h3>Lorem ipsum dolorsit </h3>
+					<h4>March 30. 2014</h4>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>
+
+<script>
+$(document).ready(function() {
+	var owl4item = $("#carousel4Columns");
+	owl4item.owlCarousel({
+      	items : 4, //10 items above 1000px browser width
+      	itemsMobile : [767,1] // itemsMobile disabled - inherit from itemsTablet option
+  	});
+
+	$(".next").click(function(){
+		owl4item.trigger('owl.next');
+	})
+	$(".prev").click(function(){
+		owl4item.trigger('owl.prev');
+	})
+});
+</script>
+
+<!--
+based on http://owlgraphic.com/owlcarousel/
+include js and css into global
+-->

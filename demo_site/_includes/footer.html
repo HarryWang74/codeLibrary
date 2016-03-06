@@ -1,0 +1,100 @@
+<footer class="footerContent">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<h4>Nam lectus elit, placerat</h4>
+				<ul>
+					<li><a href="#">Sed ut perspiciatis unde omnis iste natus </a></li>
+					<li><a href="#">Sed ut perspiciatis unde omnis iste natus </a></li>
+					<li><a href="#">Sed ut perspiciatis unde omnis iste natus </a></li>
+				</ul>
+			</div>
+			<div class="col-sm-4">
+				<h4>Nam lectus elit, placerat</h4>
+				<ul>
+					<li><a href="#">Sed ut perspiciatis unde omnis iste natus </a></li>
+					<li><a href="#">Sed ut perspiciatis unde omnis iste natus </a></li>
+					<li><a href="#">Sed ut perspiciatis unde omnis iste natus </a></li>
+				</ul>
+			</div>
+			<div class="col-sm-4">
+				<h4>Nam lectus elit, placerat</h4>
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab </p>
+				<p><i class="fa fa-phone"></i> (07) 5512 3456</p>
+				<p><i class="fa fa-home"></i> 1234/56 Lorem Ipsum St, Consectetur, QLD 4000</p>
+				<p><i class="fa fa-envelope-o"></i> lorem@ipsum.com.au</p>
+			</div>
+		</div>
+	</div>
+	<div class="bottomStripe">
+		<div class="container ">
+			<div class="col-sm-4"><p>&copy;  All Rights Reserved. </p></div>
+			<div class="col-sm-8 rightContent">
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-facebook-official"></i></a>
+				<a href="#"><i class="fa fa-pinterest-square"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="fa fa-dribbble"></i></a>
+				<a href="#"><i class="fa fa-rss"></i></a>
+				<a href="#"><i class="fa fa-github-alt"></i></a>
+				<a href="#"><i class="fa fa-google-plus"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+			</div>
+		</div>
+	</div>
+	
+	<a id="to-top" class="hidden-xs hidden-sm" style="bottom:-30px;"><i class="fa fa-angle-up"></i></a>
+</footer>
+
+
+<script>
+$( document ).ready(function() {
+	toTopBind();
+	
+	// across site click to top button and #top link, back to top
+	$('body').on('click',' #to-top, a[href="#top"]', function(){
+		$('body, html').stop().animate({ scrollTop: 0 }, 'slow');
+		return false;
+	});
+});
+
+function toTopBind() {
+	if( $('#to-top').length > 0 && $(window).width() > 1020) {
+		if($(window).scrollTop() > 350){
+			$(window).on('scroll', showToTop);
+		}else {
+			$(window).on('scroll', hideToTop);
+		}
+	}
+}
+
+function showToTop(){
+	if( $(window).scrollTop() > 350 ){
+		$('#to-top').stop(true,true).animate({ 'bottom' : '17px'},'slow');	
+		$(window).off('scroll',showToTop);
+		$(window).on('scroll',hideToTop);
+	}
+}
+
+function hideToTop(){
+	if( $(window).scrollTop() < 350 ){
+		$('#to-top').stop(true,true).animate({ 'bottom' : '-30px'},'slow');	
+		$(window).off('scroll',hideToTop);
+		$(window).on('scroll',showToTop);	
+	}
+}
+</script>
+
+<!--
+topTopJS
+	toTopBind()
+		window size > 1020 and scroll donw > 350 showToTop()
+		else hideToTop()
+	showToTop()
+		show btn
+		remove self from listener, listen to hideToTop()
+	hideToTop()
+		if scroll down < 350
+			hide btn
+			remove self from listener, listen to showToTop()
+-->

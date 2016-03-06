@@ -1,0 +1,129 @@
+@keyframes fadebottom {
+	0% {
+	    opacity: 1;
+	    transform: translateY(0px);
+	    -moz-transform: translateY(0px);
+	    -o-transform: translateY(0px);
+	}
+	25% {
+	    opacity: 0;
+	    transform: translateY(20px);
+	    -moz-transform: translateY(20px);
+	    -o-transform: translateY(20px);
+	}
+	30% {
+	    opacity: 0;
+	    transform: translateY(0px);
+	    -moz-transform: translateY(0px);
+	    -o-transform: translateY(0px);
+	}
+	45% {
+	    opacity: 1;
+	    transform: translateY(0px);
+	    -moz-transform: translateY(0px);
+	    -o-transform: translateY(0px);
+	}
+	100% {
+	    opacity: 1;
+	    transform: translateY(0px);
+	    -moz-transform: translateY(0px);
+	    -o-transform: translateY(0px);
+	}
+}
+
+@-webkit-keyframes fadebottom {
+	0% {
+	    opacity: 1;
+	    transform: translateY(0px);
+	    -webkit-transform: translateY(0px);
+	}
+	25% {
+	    opacity: 0;
+	    transform: translateY(20px);
+	     -webkit-transform: translateY(20px);
+	}
+	30% {
+	    opacity: 0;
+	    transform: translateY(0px);
+	     -webkit-transform: translateY(0px);
+	}
+	45% {
+	    opacity: 1;
+	    transform: translateY(0px);
+	     -webkit-transform: translateY(0px);
+	}
+	100% {
+	    opacity: 1;
+	    transform: translateY(0px);
+	     -webkit-transform: translateY(0px);
+	}
+}
+
+
+// block elements animation
+.has-animation {
+	opacity: 0;
+	position: relative;
+}
+
+.has-animation[data-animation="fade-in-from-left"]{ left: -40px; }
+.has-animation[data-animation="fade-in-from-right"]{ right: -40px; }
+.has-animation[data-animation="fade-in-from-bottom"] { bottom: -50px; }
+.has-animation[data-animation="grow-in"] {
+	opacity: 0.1;
+	@include i-transform(scale(0.4));
+	@include i-transition(opacity, 0.6s, cubic-bezier(0.15, 0.84, 0.35, 1.25));
+	-webkit-backface-visibility: hidden;
+}
+.has-animation[data-animation="flip-in"]{
+	opacity: 0;
+	@include i-transform(rotateY(25deg));
+	@include i-transition(opacity, 1s, ease);
+}
+
+//
+.overLay{
+	background-color: #282B30;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	@include i-transition(opacity, 0.3s, ease 0s);
+}
+.overLay:hover, 
+.overLayBrown:hover, 
+.overLayOrange:hover, 
+.overLayPurple:hover, 
+.overLayCyan:hover,
+.overLayCream:hover,
+.overLayGreen1:hover,
+.overLayGreen2:hover{
+	opacity: 0;
+}
+
+.overLayBrown, 
+.overLayOrange, 
+.overLayPurple, 
+.overLayCyan, 
+.overLayCream, 
+.overLayGreen1,
+.overLayGreen2{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+	@include i-transition(opacity, 0.3s, ease 0s);
+}
+.overLayBrown { background-color: $brown; }
+.overLayOrange{ background-color: $orange; }
+.overLayPurple{ background-color: $purple; }
+.overLayCyan{ background-color: $cyan; }
+.overLayCream{ background-color: $cream; }
+.overLayGreen1{ background-color: $green1; }
+.overLayGreen2{ background-color: $green2; }

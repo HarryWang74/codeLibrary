@@ -1,0 +1,25 @@
+.aside1{
+	h1, h2, h3, h4, h5, h6{
+		color: #676767;
+		margin-bottom: 30px;
+	}
+	h2{
+		font-size: 1.5em;
+	}
+	h3{
+		font-size: 1.1em;
+	}
+	.asideSection{
+		margin-bottom: 40px;
+		ul{
+			list-style: none;
+			padding-left: 0px;
+			li a{
+				display: block;
+				padding: 10px 0px;
+				clear: both;
+				border-bottom: 1px solid #d2d2d2;
+			}
+		}
+	}
+}

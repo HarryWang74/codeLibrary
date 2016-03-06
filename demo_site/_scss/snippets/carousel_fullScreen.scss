@@ -1,0 +1,115 @@
+.slider-down-arrow{
+	height: 60px;
+	width: 60px;
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 30px;
+	z-index: 100;
+	left: 50%;
+	text-align: center;
+	margin-left: -35px;
+	i{
+		color: #fff;
+		border-radius: 999px;
+		background-color: rgba(0,0,0,0.7);
+		padding: 15px;
+		line-height: 0.65em;
+		animation: 3.4s ease-in-out infinite fadebottom;
+		-webkit-animation: 3.4s ease-in-out infinite fadebottom;
+	}
+}
+
+#fullScreenCarousel{
+	.item{
+		background-position: 50% 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		.container{
+			width: 100%;
+			position: absolute;
+			top: 35%;
+		}
+	}
+	.banner1{ background-image: url('/images/home-banners/bg2.jpg'); }
+	.banner2{ background-image: url('/images/home-banners/bg3.jpg'); }
+
+	.texture{
+		width: 100%;
+		height: 2000px;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+			z-index: 10;
+			background-image: url('/images/layout/grid.png');
+	}
+
+	.rightCopy, .centerCopy{
+		h1{
+			color: #fff;
+			font-size: 6.2em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		p{
+			color: #fff;
+			font-size: 1.7em;
+			font-weight: 100;
+			font-family: $base-heading-fontFamily;
+			margin: 1em 0;
+		}
+	}
+
+	.centerCopy{
+		text-align: center;
+		h1{ text-align: center; }
+		p{ text-align: center; }
+	}		
+
+	.item{
+		.container{
+			position: relative;
+			z-index: 50;
+		}
+	}
+
+	.owl-controls{
+			.owl-pagination{
+				display: none;
+			}
+
+			.owl-buttons{
+				div{
+					margin: 0px;
+					opacity: 1;
+					padding: 10px 15px;
+				}
+				.fa{
+					font-size: 3em;
+					color: #fff;
+				}
+				.owl-prev, .owl-next{
+					position: absolute;
+					top: 50%;
+					background-color: rgba(0,0,0,0.4);
+				}
+				.owl-prev:hover, .owl-next:hover{
+					background-color: rgba(0,0,0,0.8);
+				}
+
+				.owl-prev{
+					left: 0;
+					@include i-round-four-corners(0px, 4px, 4px, 0px);
+				}
+				.owl-next{
+					right: 0;
+					@include i-round-four-corners(4px, 0px, 0px, 4px);
+				}
+			}
+	}
+	@media (max-width: 767px){
+		.item{
+			padding: 30px 0px;
+		}
+	}
+}

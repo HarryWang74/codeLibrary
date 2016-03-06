@@ -1,0 +1,172 @@
+<section class="progressBar">
+<div class="container">
+<div class="low">
+	
+	<div class="col-md-4">
+		<h3>Lorem ipsum dolor </h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem quam, adipiscing condimentum tristique vel, eleifend sed et turpis. Pellentesque cursus arcu id magna euismod in elementum molestie. Curabitur pellentesque massa eu nulla consequat sed porttitor arcu porttitor. Quisque volutpat pharetra felis, eu cursus lorem molestie vitae. Morbi ut arcu dolor. Maecenas id nulla nec nibh viverra vehicula. Cras feugiat, magna eu lacinia vulputate cursus arcu id magna augue est sed nunc.</p>
+	</div>
+	
+	<div class="col-md-8">
+		<h3>Lorem ipsum dolor </h3>
+
+		<div class="iProgressBar">
+			<p>Lorem ipsum</p>
+			<div class="bar-wrap">
+				<span  data-width="70">
+					<strong><i>70</i>%</strong>
+				</span>
+			</div>
+		</div>
+
+		<div class="iProgressBar">
+			<p>Lorem ipsum</p>
+			<div class="bar-wrap">
+				<span  data-width="80">
+					<strong><i>80</i>%</strong>
+				</span>
+			</div>
+		</div>
+
+		<div class="iProgressBar">
+			<p>Lorem ipsum</p>
+			<div class="bar-wrap">
+				<span  data-width="100">
+					<strong><i>100</i>%</strong>
+				</span>
+			</div>
+		</div>
+
+		<div class="iProgressBar">
+			<p>Lorem ipsum</p>
+			<div class="bar-wrap">
+				<span  data-width="60">
+					<strong><i>60</i>%</strong>
+				</span>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+</div>
+</section>
+
+
+<script>
+$.fn.countTo = function (options) {
+	options = options || {};
+	
+	return $(this).each(function () {
+		// set options for current element
+		var settings = $.extend({}, $.fn.countTo.defaults, {
+			from:            $(this).data('from'),
+			to:              $(this).data('to'),
+			speed:           $(this).data('speed'),
+			refreshInterval: $(this).data('refresh-interval'),
+			decimals:        $(this).data('decimals')
+		}, options);
+		
+		// how many times to update the value, and how much to increment the value on each update
+		var loops = Math.ceil(settings.speed / settings.refreshInterval),
+			increment = (settings.to - settings.from) / loops;
+		
+		// references & variables that will change with each update
+		var self = this,
+			$self = $(this),
+			loopCount = 0,
+			value = settings.from,
+			data = $self.data('countTo') || {};
+		
+		$self.data('countTo', data);
+		
+		// if an existing interval can be found, clear it first
+		if (data.interval) {
+			clearInterval(data.interval);
+		}
+		data.interval = setInterval(updateTimer, settings.refreshInterval);
+		
+		// initialize the element with the starting value
+		render(value);
+		
+		function updateTimer() {
+			value += increment;
+			loopCount++;
+			
+			render(value);
+			
+			if (typeof(settings.onUpdate) == 'function') {
+				settings.onUpdate.call(self, value);
+			}
+			
+			if (loopCount >= loops) {
+				// remove the interval
+				$self.removeData('countTo');
+				clearInterval(data.interval);
+				value = settings.to;
+				
+				if (typeof(settings.onComplete) == 'function') {
+					settings.onComplete.call(self, value);
+				}
+			}
+		}
+		
+		function render(value) {
+			var formattedValue = settings.formatter.call(self, value, settings);
+			$self.html(formattedValue);
+		}
+	});
+};
+
+$.fn.countTo.defaults = {
+	from: 0,               // the number the element should start at
+	to: 0,                 // the number the element should end at
+	speed: 1000,           // how long it should take to count between the target numbers
+	refreshInterval: 100,  // how often the element should be updated
+	decimals: 0,           // the number of decimal places to show
+	formatter: formatter,  // handler for formatting the value before rendering
+	onUpdate: null,        // callback method for every time the element is updated
+	onComplete: null       // callback method for when the element finishes updating
+};
+function formatter(value, settings) {
+	return value.toFixed(settings.decimals);
+}
+
+function progressBars(){
+	$('.iProgressBar').each(function(i){
+		var iTarget = $(this);
+		new Waypoint({
+			element: $(this),
+			handler: function(direction) {
+				var percent = iTarget.find('span').attr('data-width');
+				var endNum = parseInt(iTarget.find('span strong i').text());
+
+				iTarget.find('span').animate({ 'width' : percent + '%' },1600, 'easeOutCirc');
+				iTarget.find('span strong').animate({ 'opacity' : 1},1350);
+				iTarget.find('span strong i').countTo({
+					from: 0,
+					to: endNum,
+					speed: 1100,
+					refreshInterval: 30,
+					onComplete: function(){ }
+				});	
+				this.destroy();
+			}, offset: '90%' })
+	});
+}
+progressBars();
+</script>
+
+<!--
+css
+	<div class="bar-wrap"> // bar bg with radius: 300, inner shadow
+		<span  data-width="70"> // color bar, display:block, fixed-height
+			<strong> 	// bg box, position: absolute; right:0; top:-30px; 
+						// buttom arrow strong:after border-width: 5px 5px 0; make arrow, position absolute
+			<i>100</i>%
+JS
+	get all iProgressBar and convert to waypoint object
+	when enter the bottom of the page
+		change color bar as data-width width, the box is part of color bar with align right, so it follow the change of color bar
+		animation number using count to
+-->

@@ -1,0 +1,107 @@
+<section class="fullSizeBanner">
+	<div id="iBanner" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid full-width-section parallax_section" style="padding:180px 0px;">
+		<div class="row-bg-wrap">
+			<div class="row-bg using-image " style="background-image: url(/images/layout/header-bg.jpg);"></div> 
+		</div>
+
+	</div>
+</section>
+
+
+<script>
+// Create cross browser requestAnimationFrame method:
+window.requestAnimationFrame = window.requestAnimationFrame
+|| window.mozRequestAnimationFrame
+|| window.webkitRequestAnimationFrame
+|| window.msRequestAnimationFrame
+|| function(f){setTimeout(f, 1000/60)}
+
+$.fn.parallaxScroll = function(xpos, speedFactor, outerHeight) {
+	var $smoothCache = true;
+	// setup defaults if arguments aren't specified
+	if (arguments.length < 1 || xpos === null) xpos = "50%";
+	if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
+	if (arguments.length < 3 || outerHeight === null) outerHeight = true;
+
+	var $this = $(this);
+	var getHeight = $this.outerHeight(true);
+	var firstTop = $this.offset().top;
+	var paddingTop = 0;
+	
+	// function to be called whenever the window is scrolled or resized
+
+	var $element, top, height, pos;
+
+	function update(){
+
+		pos = $(window).scrollTop();				
+		
+		$this.each(function(){
+
+			firstTop = $this.offset().top;
+			$element = $(this);
+			top = $element.offset().top;
+			height = $element.outerHeight(true);
+
+			// Check if totally above or totally below viewport
+			if (top + height < pos || top > pos + $(window).height()) {
+				return;
+			}
+
+			var ua = window.navigator.userAgent;
+	        var msie = ua.indexOf("MSIE ");
+
+	        //for IE, Safari or any setup using the styled scrollbar default to animating the BG pos
+	        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./) || $smoothCache == true || navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+	        	$this.find('.row-bg.using-image').css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+	        }
+	       //for Firefox/Chrome use a higher performing method
+	        else  {
+	        	$this.find('.row-bg.using-image').transition({ 'y':  Math.round((firstTop - pos) * speedFactor) + "px"},0);
+	        }              
+			
+		});
+	}		
+
+	window.addEventListener('scroll', function(){ 
+		requestAnimationFrame(update); 
+	}, false)
+
+	$(window).on('resize',update);
+
+	update();
+};
+
+function parallaxRowsBGCals(){
+	$("#iBanner .row-bg").css({
+		'height': $("#iBanner ").outerHeight(true)*2.5, 
+		'margin-top': '-' + ($("#iBanner ").outerHeight(true)*2.5)/2 + 'px'
+	});
+}
+
+function parallaxScrollInit(){
+	$("#iBanner").parallaxScroll("50%", 0.2);
+	parallaxRowsBGCals();
+}
+
+$(window).load(parallaxRowsBGCals);
+
+$(document).ready(function() {
+	parallaxScrollInit();
+})
+</script>
+
+<!--
+
+<div class="row-bg-wrap"> // mask
+	<div class="row-bg using-image " style="background-image: url(/images/layout/bannerBG.jpg);"> // image bg
+
+basic effect by css
+	padding-top, padding-bottom, + copy height = banner height
+	<mask> position: absolute, top:0, left:0, widht = height = 100%, overflow:hidden, 
+		<bg> position: absolute, top:0, left:0, background-size: cover, background-attachment: fixed, height = origin image height
+
+add Js to make scrolling more smooth
+	when document is ready, calculate bg image height, margin-top:
+	call Jquery pluging to move image smoothly
+-->

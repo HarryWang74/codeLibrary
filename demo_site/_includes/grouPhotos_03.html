@@ -1,0 +1,175 @@
+<section class="grouPhotos03">
+  <div class="container-fluid">
+  	<div class="row">
+  		<a href="#">
+	  		<div class="col60 imageMask">
+	  			<div class="overLay"></div>
+	  			<img class="img-responsive" src="/images/grouPhotos/03/01.jpg">
+  				<div class="copyWrapper">
+					<div class="vert-center">
+						<h3>Lorem ipsum dolorsit </h3>
+						<p>March 30. 2014</p>
+					</div>
+				</div>
+	  		</div>
+  		</a>
+
+  		<div class="col20 rowStandHeight">
+  			<a href="#">
+  				<div class="col100">
+					<div class="overLay"></div>
+					<img class="img-responsive" src="/images/grouPhotos/03/02.jpg">
+					<div class="copyWrapper">
+						<div class="vert-center">
+							<h3>Lorem ipsum dolorsit </h3>
+							<p>March 30. 2014</p>
+						</div>
+					</div>
+  				</div>
+  			</a>
+
+  			<a href="#">
+  				<div class="col100">
+					<div class="overLay"></div>
+					<img class="img-responsive" src="/images/grouPhotos/03/03.jpg">
+					<div class="copyWrapper">
+						<div class="vert-center">
+							<h3>Lorem ipsum dolorsit </h3>
+							<p>March 30. 2014</p>
+						</div>
+					</div>
+  				</div>
+  			</a>
+  		</div>
+
+  		<div class="col20">
+  			<a href="#">
+  				<div class="col100">
+					<div class="overLay"></div>
+					<img class="img-responsive" src="/images/grouPhotos/03/04.jpg">
+					<div class="copyWrapper">
+						<div class="vert-center">
+							<h3>Lorem ipsum dolorsit </h3>
+							<p>March 30. 2014</p>
+						</div>
+					</div>
+  				</div>
+  			</a>
+
+  			<a href="#">
+  				<div class="col100">
+					<div class="overLay"></div>
+					<img class="img-responsive" src="/images/grouPhotos/03/05.jpg">
+					<div class="copyWrapper">
+						<div class="vert-center">
+							<h3>Lorem ipsum dolorsit </h3>
+							<p>March 30. 2014</p>
+						</div>
+					</div>
+  				</div>
+  			</a>
+  		</div>
+  	</div>
+  	<!-- row 1 finish -->
+
+  	<div class="row">
+  		<div class="col20 rowStandHeight">
+  			<a href="#">
+  				<div class="col100">
+					<div class="overLay"></div>
+					<img class="img-responsive" src="/images/grouPhotos/03/06.jpg">
+					<div class="copyWrapper">
+						<div class="vert-center">
+							<h3>Lorem ipsum dolorsit </h3>
+							<p>March 30. 2014</p>
+						</div>
+					</div>
+  				</div>
+  			</a>
+
+  			<a href="#">
+  				<div class="col100">
+					<div class="overLay"></div>
+					<img class="img-responsive" src="/images/grouPhotos/03/07.jpg">
+					<div class="copyWrapper">
+						<div class="vert-center">
+							<h3>Lorem ipsum dolorsit </h3>
+							<p>March 30. 2014</p>
+						</div>
+					</div>
+  				</div>
+  			</a>
+  		</div>
+
+  		<a href="#">
+	  		<div class="col60 imageMask">
+	  			<div class="overLay"></div>
+	  			<img class="img-responsive" src="/images/grouPhotos/03/08.jpg">
+  				<div class="copyWrapper">
+					<div class="vert-center">
+						<h3>Lorem ipsum dolorsit </h3>
+						<p>March 30. 2014</p>
+					</div>
+				</div>
+	  		</div>
+  		</a>
+
+  		<div class="col20 rowStandHeight">
+  			<a href="#">
+  				<div class="col100">
+					<div class="overLay"></div>
+					<img class="img-responsive" src="/images/grouPhotos/03/09.jpg">
+					<div class="copyWrapper">
+						<div class="vert-center">
+							<h3>Lorem ipsum dolorsit </h3>
+							<p>March 30. 2014</p>
+						</div>
+					</div>
+  				</div>
+  			</a>
+
+  			<a href="#">
+  				<div class="col100">
+					<div class="overLay"></div>
+					<img class="img-responsive" src="/images/grouPhotos/03/10.jpg">
+					<div class="copyWrapper">
+						<div class="vert-center">
+							<h3>Lorem ipsum dolorsit </h3>
+							<p>March 30. 2014</p>
+						</div>
+					</div>
+  				</div>
+  			</a>
+  		</div>
+
+
+  	</div>
+
+  </div>
+</section>
+
+<script>
+$(window).on('load', function() {
+	if(!navigator.userAgent.match(/(Android|iPod|iPhone|iPad|IEMobile|BlackBerry|Opera Mini)/)){
+		setPhotoWall();
+	}
+})
+
+function setPhotoWall(){
+	$('.grouPhotos03 .row').each( function(){
+		var height = $(this).find('.rowStandHeight').height();
+		var iTarget = $(this).find('.imageMask');
+		iTarget.css('height', height);
+	})
+}
+</script>
+
+
+<!--
+
+rollOver animation
+	<div class="overLay"> use absolution
+	image enlarge use 
+		@include i-transition(transform, 0.4s, ease-out);
+		when rollover transform: matrix(1.1, 0, 0, 1.1, -4, -5);
+-->

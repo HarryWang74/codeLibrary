@@ -1,0 +1,50 @@
+.productInfo{
+	padding: 80px 0px;
+	h1{
+		margin-bottom: 10px;
+	}
+	.featured{
+		display: block;
+		position: absolute;
+		top: -20px;
+		right: 25px;
+		@include i-round-corners(999px);
+		background-color: #fe4641!important;
+		padding: 15px;
+		color:#fff;
+		line-height: 220%;
+	}
+	.ranks{
+		font-size: 1.5em;
+		color: $base-main-color;
+	}
+	.price{
+		font-size: 2em;
+		color: $base-main-color;
+		margin: 30px 0px;
+		del{
+			font-size: 0.6em;
+			color: rgba(145,145,145, .5);
+		}
+	}
+
+	.nav-tabs{
+		margin: 30px 0px;
+		.badge{
+			background-color: $base-main-color;
+		}
+		>li.active>a, >li.active>a:focus, >li.active>a:hover{
+			background-color: $base-main-color;
+			color: #fff;
+			border: none;
+			@include i-round-corners(0px);
+			margin-right: 0px;
+			border: 1px solid $base-main-color;
+		}
+		>li>a {
+			border: 1px solid $base-main-color;
+			@include i-round-corners(0px);
+			margin-right: 0px;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.contentMilestoneI{
+	padding-top: 70px;	
+	padding-bottom: 60px;
+	background: #252525;
+	.number{
+		font-size: 3.9em;
+		font-family: $base-heading-fontFamily;
+		color: $base-main-color;
+		font-weight: 500;
+		margin: 0px;
+	}
+	.subject{
+		color: #fff;
+	}
+}

@@ -1,0 +1,48 @@
+.carousel4Columns{
+	.customNavigation{
+		padding: 50px 0px;
+		background: $lightGery;
+		h2{
+			font-size: 35px;
+			color: #676767;
+			font-weight: 300;
+			text-transform: uppercase;
+			text-align: center;
+			line-height: 1.5em;
+		}
+		.btn{
+			padding: 0px 20px;
+		}
+		.fa-4x{
+			line-height: 0.8em;
+			color: #d1d1d1;
+		}
+	}
+	.owl-controls{
+		text-align: center;
+		padding: 20px;
+	}
+	.copyWrapper{
+		padding: 20px;
+		h3, h4{
+			color:#fff;
+		}
+		h3{
+			font-size: 1.25em;
+			text-transform: uppercase;
+			margin-bottom:10px;
+		}
+		h4{
+			font-size: 1em;
+			font-weight: 300;
+		}
+	}
+	@media (max-width: 767px){
+		.customNavigation h2{
+			margin-bottom: 30px;
+		}
+		#carousel4Columns .item .img-responsive{
+			width: 100%;
+		}
+	}
+}

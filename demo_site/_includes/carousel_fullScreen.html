@@ -1,0 +1,72 @@
+<a href="#" class="slider-down-arrow" style="transform: translate(0px, 0px); opacity: 1;"><i class="fa fa-angle-down fa-3x"></i></a>
+
+<div id="fullScreenCarousel" class="owl-carousel owl-theme">
+  <div class="item banner2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12  centerCopy">
+            <h1>Lorem ipsum dolor</h1>
+            <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+            <a class="button animationBtn" href="#"><span>call to action</span><i class="fa fa-angle-double-right"></i></a>
+            <a class="button blue animationBtn" href="#"><span>call to action</span><i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+    </div>
+    <div class="texture"></div>
+  </div>
+
+
+  <div class="item banner1">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12  centerCopy">
+            <h1>Lorem ips</h1>
+            <p>consectetur adipiscing elit sed do eiusmod tempor incididunt</p>
+            <a class="button animationBtn" href="#"><span>call to action</span><i class="fa fa-angle-double-right"></i></a>
+            <a class="button blue animationBtn" href="#"><span>call to action</span><i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+    </div>
+    <div class="texture"></div>
+  </div>
+
+</div>
+
+<script>
+$(document).ready(function() {
+  if(!navigator.userAgent.match(/(Android|iPod|iPhone|iPad|IEMobile|BlackBerry|Opera Mini)/)){
+    setFullScreenBanner();
+    $(window).resize(setFullScreenBanner);
+  }
+  
+  $("#fullScreenCarousel").owlCarousel({
+    navigation: true, 
+    navigationText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+    slideSpeed: 300,
+    paginationSpeed: 400,
+    singleItem: true,
+    autoHeight : true
+  })
+
+  $('body').on('click','.slider-down-arrow', function(){
+    $('body, html').stop().animate({ scrollTop: $(window).height() }, 'slow');
+    return false;
+  });
+})
+
+function setFullScreenBanner() {
+  $("#fullScreenCarousel .item").each( function() {   
+    $(this).css({ 'height': $(window).height() });
+  });
+}
+</script>
+
+<!--
+  based on http://owlgraphic.com/owlcarousel/
+  include js and css into global
+  after document ready
+    setBanner height to screen height
+    initial owlCarousel
+    in mobile disabled calculate padding and use fixed padding from css. 
+    downArrow is css animation. keyframe part from _scss/fundation/animation.scss
+-->

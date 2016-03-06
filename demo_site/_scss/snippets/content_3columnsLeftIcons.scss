@@ -1,0 +1,20 @@
+.content3columnLeftIcons{
+	padding: 80px 0px;
+	.row:first-child{
+		margin-bottom: 40px;
+	}
+	h2{
+		font-size: 1.1em;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+	p{
+		font-size: 0.9em;
+	}
+	i{
+		color: $base-main-color;
+	}
+	@media (max-width: 767px){
+		i{ margin: 30px; }
+	}
+}

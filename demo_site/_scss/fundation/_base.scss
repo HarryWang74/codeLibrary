@@ -1,0 +1,92 @@
+// *************************************
+//   Base
+//   -> Base-level tags (body, p, etc.)
+// *************************************
+html {
+  font-size: $base-fontSize;
+}
+
+body {
+  background: $base-background-color;
+  font-size: 100%;
+  line-height: $base-lineHeight
+}
+
+// -------------------------------------
+//   Block Content
+// -------------------------------------
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+  font-family: $base-heading-fontFamily;
+  color: $base-heading-color;
+}
+
+p {
+  color: $base-text-color;
+  font-family: $base-text-fontFamily;
+  font-size: $base-fontSize;
+}
+
+.centerContent{
+  text-align: center;
+}
+.rightContent{
+  text-align: right;
+}
+.splitLines{
+  height: 20px;
+  margin: 0 15px;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+// -------------------------------------
+//  Inline Content
+// -------------------------------------
+a {
+  color: $base-link-color;
+  font-family: $base-text-fontFamily;
+  text-decoration: none;
+  &:hover { text-decoration: none; }
+  &:focus { text-decoration: none; }
+  outline: none;
+  &:focus { outline: none;}
+}
+
+// -------------------------------------
+//  Color Content
+// -------------------------------------
+.blue{ background: $base-main-color; }
+.brownBG{ background: $brown; }
+.orangeBG { background: $orange; }
+.purpleBG { background: $purple; }
+.cyanBG{ background: $cyan; }
+
+// -------------------------------------
+//  forms
+// -------------------------------------
+label{
+      font-weight: 300;
+      color: #676767;
+      span{
+        color: $base-main-color;
+      }
+}
+
+label.error {
+      color: #ed1c24;
+}
+
+input[type=text], textarea.form-control, input[type=email], input[type=password], input[type=tel], input[type=url], input[type=search], input[type=date]{
+      padding: 10px!important;
+      width: 100%;
+      border: 0px;
+      border-bottom: 1px solid #fff;
+      font-size: 14px;
+      line-height: 22px;
+      color: #555;
+      background-color: #efefef;
+      @include i-round-corners(0px);
+      @include i-transition(all, 0.2s, linear);
+      @include i-box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.09), inset);
+}

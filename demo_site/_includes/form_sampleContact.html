@@ -1,0 +1,56 @@
+<section class="sampleContactForm">
+	<div class="container">
+	<div class="row">
+	<div class="col-sm-8">
+		<form id="iForm">
+			<div class="form-group">
+				<label for="uName">Name (required, at least 2 characters)</span></label>
+				<input type="text" class="form-control" id="uName" name="uName" placeholder="Your name"  minlength="2" required>
+			</div>
+
+			<div class="form-group">
+				<label for="uEmail">E-Mail (required)</label>
+				<input type="email" class="form-control" id="uEmail" name="uEmail" required placeholder="email">
+			</div>
+
+			<div class="form-group">
+				<label for="name">Subject (optional)</label>
+				<input type="text" class="form-control" id="" placeholder="">
+			</div>
+
+			<div class="form-group">
+				<label for="uComments">Your comment (required)</label>
+				<textarea class="form-control" rows="5" required></textarea>
+			</div>
+
+			<button type="submit" class="button blue">Submit</button>
+		</form>
+	</div>
+	
+	<div class="col-sm-4 contactInfo">
+		<h2>Nam lectus elit, placerat</h2>
+		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab </p>
+		<ul class="list-unstyled">
+			<li><i class="fa fa-phone"></i> (07) 5512 3456</li>
+			<li><i class="fa fa-home"></i> 1234/56 Lorem Ipsum St, Consectetur, QLD 4000</li>
+			<li><i class="fa fa-envelope-o"></i> lorem@ipsum.com.au</li>
+		</ul>
+	</div>
+	</div>
+	</div>
+</section>
+
+<script>
+$("#iForm").validate({
+	submitHandler: function(form) {
+	  $(form).ajaxSubmit();
+	}
+});
+</script>
+
+<!--
+form validation
+use http://jqueryvalidation.org/ validate form
+more example at http://jqueryvalidation.org/files/demo/ or check google site notes
+set basic rules and requirement in tag attribute
+-->

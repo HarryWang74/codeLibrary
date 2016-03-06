@@ -1,0 +1,232 @@
+#fullSizeNavWithCarousel{
+	.search-form{
+		padding: 33px 25px 30px 25px;
+		.search-button{
+			background: transparent;
+			border: none;
+			i{ color:#fff; }
+		}
+		.form-control{
+			@include i-round-corners(0px);
+			font-family: $base-heading-fontFamily
+		}
+	}
+
+
+// ----- Overwrite bootstrap default nav ----- //
+	.navbar-default{
+		background-color: rgba(255, 255, 255, 0);
+		border-color: rgba(255,255,255,0.25);
+		.navbar-nav > li > a{
+			color: #fff;
+			font-family: $base-heading-fontFamily;
+			font-size: 0.9em;
+		}
+	}
+	.navbar-brand {
+		height: auto;
+		padding-top: 35px;
+	}
+	.nav > li > a {
+		  padding: 40px 25px 30px 25px;
+	}
+
+	.navbar-right .dropdown-menu.classic {
+		right: inherit;
+		left: auto;
+	}
+
+	.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+		background-color: transparent;
+	}
+	.dropdown-menu{
+		padding: 0px;
+		background-color: $base-drop-down-background-color;
+		li > a{
+			color: #818181;
+			padding: 10px 20px;
+			border-bottom: 1px solid #373737;
+		}
+		li > a:hover{
+			color: $base-main-color;
+			background-color: $base-drop-down-background-hover-color;
+		}
+	}
+// ----- after scrolling ----- //
+	.small-nav{
+		background-color: #fff;
+		@include i-box-shadow(0 0 3px 0, rgba(0, 0, 0, 0.22));
+		@include i-transition(all, 0.4s, ease);
+		.navbar-nav > li > a, .search-form .search-button i {
+			color: #777;
+		}
+	}
+// ----- yamm drop down ----- //
+	.yamm-fw .dropdown-menu .yamm-content .menuColumn{
+		border-right: 1px solid #2c2c2c;
+		h4{
+			margin-bottom: 10px;
+		}
+		ul{	
+			padding-left: 0px;
+			list-style: none;
+			li > a{
+				display: block;
+				padding: 10px 20px;
+				clear: both;
+				border: none;
+			}
+			li > a:hover{
+				background-color: $base-drop-down-background-hover-color;
+			}
+		}
+	}
+	.yamm-fw .dropdown-menu .yamm-content .menuColumn:last-child{
+		border: none;
+	}
+
+
+// ----- carsoual ----- //
+	#home-carousel{
+		.item{
+			background-position: 50% 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.banner1{ background-image: url('/images/home-banners/bg1.jpg'); }
+		.banner2{ background-image: url('/images/home-banners/bg2.jpg'); }
+
+		.texture{
+			width: 100%;
+			height: 2000px;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+  			z-index: 10;
+  			background-image: url('/images/layout/grid.png');
+		}
+
+		.rightCopy, .centerCopy{
+			h1{
+				color: #fff;
+				font-size: 6.2em;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			p{
+				color: #fff;
+				font-size: 1.7em;
+				font-weight: 100;
+				font-family: $base-heading-fontFamily;
+				margin: 1em 0;
+			}
+		}
+
+		.centerCopy{
+			text-align: center;
+			h1{ text-align: center; }
+			p{ text-align: center; }
+		}		
+
+		.item{
+			.container{
+				position: relative;
+				z-index: 50;
+			}
+		}
+
+		.owl-controls{
+  			.owl-pagination{
+  				position: absolute;
+  				bottom: 0;
+  				width: 100%;
+  				text-align: center;
+  				.owl-page span{
+  					background-color: #fff;
+  				}
+  			}
+
+  			.owl-buttons{
+  				div{
+  					margin: 0px;
+  					opacity: 1;
+  					padding: 10px 15px;
+  				}
+  				.fa{
+  					font-size: 3em;
+  					color: #fff;
+  				}
+  				.owl-prev, .owl-next{
+  					position: absolute;
+  					top: 50%;
+  					background-color: rgba(0,0,0,0.4);
+  				}
+  				.owl-prev:hover, .owl-next:hover{
+  					background-color: rgba(0,0,0,0.8);
+  				}
+
+  				.owl-prev{
+  					left: 0;
+  					@include i-round-four-corners(0px, 4px, 4px, 0px);
+  				}
+  				.owl-next{
+  					right: 0;
+  					@include i-round-four-corners(4px, 0px, 0px, 4px);
+  				}
+  			}
+		}
+	}
+	
+	@media (max-width: 767px){
+		#home-carousel .owl-controls .owl-pagination .owl-page span {
+			background: #869791;
+		}
+		.yamm-fw .dropdown-menu .yamm-content .menuColumn{
+			border: none;
+		}
+		.yamm-fw .dropdown-menu .yamm-content .menuColumn ul{
+			margin-bottom: 20px;
+		}
+		.yamm-fw .dropdown-menu .yamm-content .menuColumn ul li>a{
+			border-bottom: 1px solid #373737;
+		}
+		.navbar-right{
+			padding: 0px 20px;
+		}
+		.navbar-default .navbar-nav>li>a{
+			border-bottom: 1px dashed #373737;
+		}
+		.navbar-default .navbar-nav>li>a:last-child{
+			border: none;
+		}
+		.navbar-collapse{
+			background-color: $base-drop-down-background-color;
+		}
+		.navbar-default .navbar-nav > li > a {
+			color: #777;
+		}
+		.nav>li>a{
+			padding: 30px 20px;
+		}
+		.navbar-fixed-top .navbar-collapse{
+			max-height: 100%;
+		}
+
+		.navbar-brand{
+			padding: 15px;
+		}
+		.navbar{
+			margin-bottom: 0px;
+		}
+		.navbar-fixed-top{
+			position: relative;
+		}
+		#home-carousel .owl-controls{
+			top: 85%;
+  			height: 50px;
+		}
+		.owl-controls .owl-buttons{
+			display: none;
+		} 
+	}
+}
